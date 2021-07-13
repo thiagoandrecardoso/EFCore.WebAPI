@@ -1,9 +1,5 @@
 ﻿using EFCore.WebAPI.Model;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace EFCore.WebAPI.Data
 {
@@ -23,7 +19,7 @@ namespace EFCore.WebAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<HeroBattleManyToMany>(entity => 
+            modelBuilder.Entity<HeroBattleManyToMany>(entity =>
             {
                 entity.HasKey(e => new { e.BattleId, e.HeroId });
             });
