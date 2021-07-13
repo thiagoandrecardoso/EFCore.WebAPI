@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace EFCore.WebAPI.Model
 {
@@ -9,5 +10,6 @@ namespace EFCore.WebAPI.Model
         public string Description { get; set; }
         public DateTime DtInitial { get; set; }
         public DateTime DtEnd { get; set; }
+        public List<HeroBattleManyToMany> HerosBattles { get; set; }
     }
 }

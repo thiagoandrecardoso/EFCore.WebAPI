@@ -13,10 +13,20 @@ namespace EFCore.WebAPI.Data
         public DbSet<Hero> Heros { get; set; }
         public DbSet<Battle> Battles { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
+        public DbSet<HeroBattleManyToMany> HeroBattleMtoM { get; set; }
+        public DbSet<SecretIdentity> SecretIdentity { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(StrComm);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<HeroBattleManyToMany>(entity => 
+            {
+                entity.HasKey(e => new { e.BattleId, e.HeroId });
+            });
         }
     }
 }
