@@ -12,10 +12,6 @@ namespace EFCore.Repo
         public DbSet<HeroBattleManyToMany> HeroBattleMtoM { get; set; }
         public DbSet<SecretIdentity> SecretIdentity { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<HeroBattleManyToMany>(entity =>
