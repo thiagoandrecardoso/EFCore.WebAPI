@@ -1,11 +1,11 @@
-﻿using EFCore.WebAPI.Model;
+﻿using EFCore.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace EFCore.WebAPI.Data
+namespace EFCore.Repo
 {
     public class HeroContext : DbContext
     {
-        public const string StrComm = "Password=abacaxi98;Persist Security Info=True;User ID=sa;Initial Catalog=HeroApp;Data Source=WDAELETRA02\\SQLEXPRESS";
+        public HeroContext(DbContextOptions<HeroContext> options) : base(options) { }
         public DbSet<Hero> Heros { get; set; }
         public DbSet<Battle> Battles { get; set; }
         public DbSet<Weapon> Weapons { get; set; }
@@ -14,7 +14,6 @@ namespace EFCore.WebAPI.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(StrComm);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

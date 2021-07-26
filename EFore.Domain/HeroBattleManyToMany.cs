@@ -1,4 +1,9 @@
-﻿namespace EFCore.WebAPI.Model
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace EFCore.Domain
 {
     public class HeroBattleManyToMany
     {
@@ -6,5 +11,6 @@
         public int BattleId { get; set; }
         public Hero Hero { get; set; }
         public Battle Battle { get; set; }
+
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace EFCore.WebAPI.Model
+namespace EFCore.Domain
 {
     public class Hero
     {
@@ -9,5 +9,5 @@ namespace EFCore.WebAPI.Model
         public SecretIdentity Secret { get; set; }
         public List<Weapon> Weapons { get; set; }
         public List<HeroBattleManyToMany> HerosBattles { get; set; }
-    }
+    } 
 }
